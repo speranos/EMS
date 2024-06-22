@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserGridComponent } from './user-grid/user-grid.component';
 import { AddComponent } from './add/add.component';
+import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
 // import { EditComponent } from './edit/edit.component';
 
 @NgModule({
@@ -12,10 +14,12 @@ import { AddComponent } from './add/add.component';
     AppComponent,
     UserGridComponent,
     AddComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [
     provideClientHydration()

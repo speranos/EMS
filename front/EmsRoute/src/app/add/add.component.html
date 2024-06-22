@@ -1,4 +1,8 @@
-<button class="top-right-button">
+<!-- <button class="top-right-button">
     + Add Record
   </button>
-  
+   -->
+<button class="top-right-button" (click)="openForm()">
+    + Add Record
+</button>
+<app-form *ngIf="showForm" (closeForm)="closeForm()"></app-form>
