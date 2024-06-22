@@ -1,7 +1,7 @@
 /* src/app/user-table/user-table.component.css */
 .user-table-container {
     width: 100%;
-    padding: 20px;
+    padding: 60px;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
