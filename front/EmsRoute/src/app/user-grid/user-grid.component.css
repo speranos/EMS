@@ -1,0 +1,39 @@
+/* src/app/user-table/user-table.component.css */
+.user-table-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .user-table {
+    width: 80vw;
+    border-collapse: collapse;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 25px;
+    /* border: 1px solid #ddd; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    border-radius: 15px;
+  }
+  
+  .user-table th {
+    background-color: hsla(0, 0%, 93%, 0.569);
+  }
+  
+  .user-table tr:nth-child(even) {
+    background-color: hsla(0, 0%, 93%, 0.569);
+
+  }
+  
+  .user-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
