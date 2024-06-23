@@ -1,10 +1,10 @@
-public interface IUser
+public class IUser
 {
     Guid Id { get; set; }
-    string FirstName { get; set; }
-    string LastName { get; set; }
-    string Email { get; set; }
-    int PhoneNumber { get; set; }
-    string Position { get; set; }
-    string Department { get; set; }
+    public string firstName { get; set; }
+    public string lastName { get; set; }
+    public string email { get; set; }
+    public string phoneNumber { get; set; }
+    public string position { get; set; }
+    public string department { get; set; }
 }
