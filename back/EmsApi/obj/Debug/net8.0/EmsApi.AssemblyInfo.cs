@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmsApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c56fa9d8c365358c1dfe87428da6faef0789d6a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fca5ababf1561445698e778ff19f7610a6b1976")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmsApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmsApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

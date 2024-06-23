@@ -24,11 +24,12 @@ app.MapPost("/create", async (User user) => {
     await db.SaveChangesAsync();
         return Results.Ok(user);
 });
-// app.MapGet("/home", =>);
-// app.MapGet("/user/{id}",);
-// app.MapPost("/user/{id}",);
 // app.MapDelete("/user/{id}",);
+
 // app.MapPut("/user/{id}",);
+
+// app.MapGet("/user/{id}",);
+
 
 
 app.Run();

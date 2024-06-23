@@ -2,7 +2,7 @@
     + Add Record
   </button>
    -->
-<button class="top-right-button" (click)="openForm()">
+<button class="top-right-button" [routerLink]="['/add']">
     + Add Record
 </button>
-<app-form *ngIf="showForm" (closeForm)="closeForm()"></app-form>
+<!-- <app-form *ngIf="showForm" (closeForm)="closeForm()"></app-form> -->

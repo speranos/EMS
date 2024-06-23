@@ -8,6 +8,7 @@ import { AddComponent } from './add/add.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DeleteComponent } from './delete/delete.component';
 
 // import { EditComponent } from './edit/edit.component';
 
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     UserGridComponent,
     AddComponent,
     FormComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,

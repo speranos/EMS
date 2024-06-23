@@ -21,19 +21,10 @@ export class FormComponent {
     position: '',
     department: ''
   };
+  formSubmitted = false;
 
-  onSubmit() {
-    this.back.Add(this.formData).subscribe();
-    // .subscribe(
-    //     (response) => {
-    //         console.log('POST request successful', response);
-    //         // Handle success, e.g., show a success message
-    //       },
-    //       (error) => {
-    //           console.error('Error in POST request', error);
-    //           // Handle error, e.g., show an error message
-    //         }
-    //       );
+  onSubmit(form: any) {
+      this.back.Add(this.formData).subscribe();
       this.closeForm.emit();
   }
 

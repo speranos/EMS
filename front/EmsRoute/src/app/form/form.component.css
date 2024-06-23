@@ -19,6 +19,12 @@
     flex-direction: column;
   }
   
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 0.25em;
+  }
+  
   .popup-form label {
     display: flex;
     align-items: center;
