@@ -12,13 +12,17 @@ app.UseCors("AllowLocalhost");
 
 var db = new AppDbContext();
 
-IUser Idb;
+// User Idb;
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/all", async () => {
+    var users = db.Users.ToList();
+        return Results.Ok(users);
+});
 
-app.MapPost("/create", async (IUser user) => {
-    Console.WriteLine("SERGWERGWERGWE");
-    Console.WriteLine(user);
+app.MapPost("/create", async (User user) => {
+    db.Users.Add(user);
+    await db.SaveChangesAsync();
+        return Results.Ok(user);
 });
 // app.MapGet("/home", =>);
 // app.MapGet("/user/{id}",);

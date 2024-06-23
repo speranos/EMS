@@ -13,6 +13,8 @@ export class CrudService {
   Add(user: user){
     console.log("SF RAH MCHAAAAAAA!!!!!!!!!!!!!!!");
     return this.http.post(this.baseUrl + "/create", user);
-
+  }
+  GetAll() {
+    return this.http.get<user[]>(this.baseUrl + "/all");
   }
 }

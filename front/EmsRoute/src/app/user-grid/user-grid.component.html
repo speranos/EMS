@@ -13,17 +13,16 @@
         </tr>
       </thead>
       <tbody>
-        <!-- <tr *ngFor="let i of pagi"> -->
-        <tr>
-          <td>empty</td>
-          <td>empty</td>
-          <td>empty</td>
-          <td>empty</td>
-          <td>empty</td>
-          <td>empty</td>
+        <tr *ngFor="let user of Users"> 
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phoneNumber}}</td>
+          <td>{{user.position}}</td>
+          <td>{{user.department}}</td>
+          <input type="hidden" value="{{ user.id }}" class="user-id" />
           <td><button>Edit</button><button>delete</button></td>
         </tr>
-        <!-- </tr> -->
       </tbody>
     </table>
   </div>

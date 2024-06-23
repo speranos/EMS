@@ -24,17 +24,17 @@ export class FormComponent {
 
   onSubmit() {
     this.back.Add(this.formData).subscribe();
-    this.closeForm.emit();
-      // .subscribe(
-      //   (response) => {
-      //     console.log('POST request successful', response);
-      //     // Handle success, e.g., show a success message
-      //   },
-      //   (error) => {
-      //     console.error('Error in POST request', error);
-      //     // Handle error, e.g., show an error message
-      //   }
-      // );
+    // .subscribe(
+    //     (response) => {
+    //         console.log('POST request successful', response);
+    //         // Handle success, e.g., show a success message
+    //       },
+    //       (error) => {
+    //           console.error('Error in POST request', error);
+    //           // Handle error, e.g., show an error message
+    //         }
+    //       );
+      this.closeForm.emit();
   }
 
   close() {
