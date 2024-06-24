@@ -29,4 +29,9 @@
       </tbody>
     </table>
   </div>
+  <div>
+    <button class="button" (click)="PerviousPage()" [disabled]="pagenum == 1" (click)="PerviousPage" > Previous </button>
+    <span> Page Num {{pagenum}} of {{totalePage}} </span>
+    <button class="button" (click)="NextPage()" [disabled]="pagenum == totalePage" > Next </button>
+  </div>
   

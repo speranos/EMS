@@ -9,14 +9,14 @@ body, html {
   .frame {
     width: 95vw;
     height: 95vh;
-    /* background-color: rgba(255, 255, 255, 0.565); Transparent white */
+    /* background-color: rgba(255, 255, 255, 0.565); */
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.72) 0%,
         rgba(255, 255, 255, 0.45) 100%
       );
-      -webkit-backdrop-filter: saturate(2);
-    backdrop-filter: saturate(2);
+      -webkit-backdrop-filter: saturate(3);
+    backdrop-filter: saturate(3);
 
     justify-content: center;
     align-items: center;

@@ -20,12 +20,16 @@ export class CrudService {
     return this.http.delete(this.baseUrl + `/delete/${userid}`);
   }
 
-  GetAll() {
-    return this.http.get<user[]>(this.baseUrl + "/all");
+  GetAll(pagenum: number) {
+    return this.http.get<user[]>(this.baseUrl + `/page/${pagenum}`);
   }
 
   GetUser(userid: string) {
     return this.http.get<user>(this.baseUrl + `/user/${userid}`);
+  }
+
+  GetCount(){
+    return this.http.get<number>(this.baseUrl + '/count');
   }
 
   UpdateUser(user: user) {

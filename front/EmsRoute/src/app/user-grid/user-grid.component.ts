@@ -12,15 +12,36 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UserGridComponent implements OnInit {
   Users: user[] = [];
+  pagenum:number = 1;
+  totalePage:number = 0;
   constructor(private back: CrudService, private router: Router) { }
 
-  
   ngOnInit(): void {
-    this.back.GetAll().subscribe((data: user[]) => {
-      this.Users = data;
-      // console.log(this.Users);
-    });
+    this.Mfetch();
 }
+
+Mfetch(){
+  this.back.GetAll(this.pagenum).subscribe((data: user[]) => {
+    this.Users = data;
+  });
+
+  this.back.GetCount().subscribe((data: number) => {
+    this.totalePage = Math.ceil(data / 9);
+  });
+}
+
+NextPage(){
+  this.pagenum++;
+  this.Mfetch();
+  console.log(this.Users);
+  console.log(this.pagenum);
+}
+
+PerviousPage(){
+  this.pagenum--;
+  this.Mfetch();
+}
+  
 
 
 }

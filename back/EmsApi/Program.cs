@@ -15,10 +15,14 @@ var app = builder.Build();
 app.UseCors("AllowLocalhost");
 
 
-app.MapGet("/all", async (AppDbContext db) => {
-    var users = db.Users.ToList();
+app.MapGet("/page/{pagenum}", async (AppDbContext db, int pagenum) => {
+    int totalCount = await db.Users.CountAsync();
+    var users = db.Users
+    .Skip((pagenum - 1) * 9)
+    .Take(9)
+    .ToListAsync();
     Console.WriteLine("backend envolved !!!!!");
-        return Results.Ok(users);
+        return Results.Ok(users.Result);
 });
 
 app.MapGet("/user/{userid}", async (AppDbContext db, Guid userid) => {
@@ -26,6 +30,11 @@ app.MapGet("/user/{userid}", async (AppDbContext db, Guid userid) => {
     Console.WriteLine(user.Result);
     Console.WriteLine("Single user envolved !!!!!");
         return Results.Ok(user.Result);
+});
+
+app.MapGet("/count", async (AppDbContext db) => {
+    int count = await db.Users.CountAsync();
+    return Results.Ok(count);
 });
 
 app.MapPost("/create", async (AppDbContext db, User user) => {
