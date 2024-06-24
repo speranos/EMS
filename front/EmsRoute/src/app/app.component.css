@@ -24,4 +24,13 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
   }
-  
+
+
+
+  .title {
+    font-family: 'Fantasy', copperplate;
+    font-size: 56px;
+    color: #333;
+    text-shadow: 2px 2px 4px #5d09d2;
+    text-align: center;
+  }

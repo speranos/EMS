@@ -22,10 +22,14 @@
     /* border: 1px solid #ddd; */
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     border-radius: 15px;
+    font-family: 'Sans-serif', Verdana;
+    font-size: 17px;
   }
   
   .user-table th {
     background-color: hsla(0, 0%, 93%, 0.569);
+    font-family: 'Fantasy', copperplate;
+    font-size: 24px;
   }
   
   .user-table tr:nth-child(even) {
@@ -39,6 +43,7 @@
   
   .button {
     padding: 5px 10px;
+    margin-right: 5px;
     background-color: #5d09d2;
     color: white;
     border: none;
@@ -50,3 +55,23 @@
   .button:hover {
     background-color: #000000;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;      
+    color: rgb(255, 255, 255);
+    background-color: #5d09d2;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+}
+
+.button:disabled {
+  background-color: hsla(0, 0%, 93%, 0.569);
+  color: rgb(0, 0, 0);
+}
