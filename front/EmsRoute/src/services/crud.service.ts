@@ -24,16 +24,6 @@ export class CrudService {
     return this.http.get<user[]>(this.baseUrl + "/all");
   }
 
-  // Set(Users:user){
-  //   this.back.GetAll().subscribe((data: user[]) => {
-  //     this.Users = data;
-  //     console.log(this.Users[0].id);
-  //   });
 
-  // }
-
-  // Get(){
-
-  // }
 
 }

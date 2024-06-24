@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { user } from '../../interface';
 import { CrudService } from '../../services/crud.service';
 import { AppRoutingModule } from '../app-routing.module';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'user-grid',
@@ -12,13 +12,15 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class UserGridComponent implements OnInit {
   Users: user[] = [];
-  constructor(private back: CrudService) { }
+  constructor(private back: CrudService, private router: Router) { }
 
   
   ngOnInit(): void {
     this.back.GetAll().subscribe((data: user[]) => {
       this.Users = data;
-      console.log(this.Users[0].id);
+      console.log(this.Users);
     });
-  }
+}
+
+
 }

@@ -1,5 +1,5 @@
 <div class="popup-form">
-    <form (ngSubmit)="onSubmit(form)" #form="ngForm" novalidate>
+    <form (ngSubmit)="onSubmit()" #form="ngForm" novalidate>
       <h2>Add New Record</h2>
       <label>
         First Name:
@@ -46,7 +46,7 @@
           Department is required.
         </div>
       </label>
-      <button type="submit" [disabled]="!form.valid" (click)="onSubmit(form)" [routerLink]="['']" >Submit</button>
+      <button type="submit" [disabled]="!form.valid" >Submit</button>
       <button type="button" [routerLink]="['']">Cancel</button>
     </form>
   </div>

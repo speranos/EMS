@@ -16,7 +16,8 @@ app.UseCors("AllowLocalhost");
 
 
 app.MapGet("/all", async (AppDbContext db) => {
-    var users = db.Users.ToListAsync();
+    var users = db.Users.ToList();
+    Console.WriteLine("backend envolved !!!!!");
         return Results.Ok(users);
 });
 
@@ -31,10 +32,10 @@ app.MapDelete("/delete/{userid}", async (AppDbContext db, Guid userid) => {
     var user = await db.Users.FindAsync(userid);
     if (user == null)
         return Results.NotFound(new { message = "User not found" });
-    else{
-        db.Users.Remove(user);
-        await db.SaveChangesAsync();
-    }
+
+    db.Users.Remove(user);
+    await db.SaveChangesAsync();
+
     return Results.Ok();
 });
 

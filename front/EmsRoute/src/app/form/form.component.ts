@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CrudService } from '../../services/crud.service';
 import { user } from '../../interface';
+import { Router } from '@angular/router';
+
 import { UserGridComponent } from '../user-grid/user-grid.component';
 
 @Component({
@@ -10,7 +12,7 @@ import { UserGridComponent } from '../user-grid/user-grid.component';
 })
 export class FormComponent {
   @Output() closeForm = new EventEmitter<void>();
-  constructor(private back: CrudService){}
+  constructor(private back: CrudService, private router: Router){}
   
 
   formData: user = {
@@ -23,14 +25,18 @@ export class FormComponent {
   };
   formSubmitted = false;
 
-  onSubmit(form: any) {
-    console.log(this.formData);
-    console.log("kifach lblan");
-      this.back.Add(this.formData).subscribe();
-      // this.closeForm.emit();
+  onSubmit() {
+    // console.log(this.formData);
+    // console.log("kifach lblan");
+    this.back.Add(this.formData).subscribe({
+      next:() => {
+        this.router.navigate(['']);
+      },
+      error: (err) => {
+        console.error("Creation Error", err);
+      }
+    });
+  // this.back.Add(this.formData).subscribe();
+  // this.router.navigate(['']);
   }
-
-  // close() {
-  //   this.closeForm.emit();
-  // }
 }
