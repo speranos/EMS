@@ -18,7 +18,7 @@ export class UserGridComponent implements OnInit {
   ngOnInit(): void {
     this.back.GetAll().subscribe((data: user[]) => {
       this.Users = data;
-      console.log(this.Users);
+      // console.log(this.Users);
     });
 }
 

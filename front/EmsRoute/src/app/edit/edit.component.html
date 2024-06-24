@@ -1,0 +1,53 @@
+<div class="popup-form">
+    <form (ngSubmit)="onSubmit()" #form="ngForm" novalidate>
+      <h2>Update Record</h2>
+      <label>
+        First Name:
+        <input type="text" [(ngModel)]="User.firstName" name="firstName" required>
+        <div *ngIf="!form.valid && form.controls['firstName'].errors?.['required']" class="error">
+          First Name is required.
+        </div>
+      </label>
+      <label>
+        Last Name:
+        <input type="text" [(ngModel)]="User.lastName" name="lastName" required>
+        <div *ngIf="!form.valid && form.controls['lastName'].errors?.['required']" class="error">
+          Last Name is required.
+        </div>
+      </label>
+      <label>
+        Email:
+        <input type="email" [(ngModel)]="User.email" name="email" required email>
+        <div *ngIf="!form.valid && form.controls['email'].errors?.['required']" class="error">
+          Email is required.
+        </div>
+        <div *ngIf="!form.valid && form.controls['email'].errors?.['email']" class="error">
+          Please enter a valid email address.
+        </div>
+      </label>
+      <label>
+        Phone Number:
+        <input type="text" [(ngModel)]="User.phoneNumber" name="phoneNumber" required>
+        <div *ngIf="!form.valid && form.controls['phoneNumber'].errors?.['required']" class="error">
+          Phone Number is required.
+        </div>
+      </label>
+      <label>
+        Position:
+        <input type="text" [(ngModel)]="User.position" name="position" required>
+        <div *ngIf="!form.valid && form.controls['position'].errors?.['required']" class="error">
+          Position is required.
+        </div>
+      </label>
+      <label>
+        Department:
+        <input type="text" [(ngModel)]="User.department" name="department" required>
+        <div *ngIf="!form.valid && form.controls['department'].errors?.['required']" class="error">
+          Department is required.
+        </div>
+      </label>
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+      <button type="button" [routerLink]="['']">Cancel</button>
+    </form>
+  </div>
+  

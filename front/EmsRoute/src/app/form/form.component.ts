@@ -23,7 +23,7 @@ export class FormComponent {
     position: '',
     department: ''
   };
-  formSubmitted = false;
+  // formSubmitted = false;
 
   onSubmit() {
     // console.log(this.formData);

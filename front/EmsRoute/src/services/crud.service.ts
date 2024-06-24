@@ -24,6 +24,14 @@ export class CrudService {
     return this.http.get<user[]>(this.baseUrl + "/all");
   }
 
+  GetUser(userid: string) {
+    return this.http.get<user>(this.baseUrl + `/user/${userid}`);
+  }
+
+  UpdateUser(user: user) {
+    return this.http.put(this.baseUrl + "/update", user);
+  }
+
 
 
 }

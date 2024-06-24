@@ -9,6 +9,7 @@ import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteComponent } from './delete/delete.component';
+import { EditComponent } from './edit/edit.component';
 
 // import { EditComponent } from './edit/edit.component';
 
@@ -19,6 +20,7 @@ import { DeleteComponent } from './delete/delete.component';
     AddComponent,
     FormComponent,
     DeleteComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

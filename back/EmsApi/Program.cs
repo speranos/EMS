@@ -21,10 +21,24 @@ app.MapGet("/all", async (AppDbContext db) => {
         return Results.Ok(users);
 });
 
+app.MapGet("/user/{userid}", async (AppDbContext db, Guid userid) => {
+    var user = db.Users.FindAsync(userid);
+    Console.WriteLine(user.Result);
+    Console.WriteLine("Single user envolved !!!!!");
+        return Results.Ok(user.Result);
+});
+
 app.MapPost("/create", async (AppDbContext db, User user) => {
     db.Users.Add(user);
     await db.SaveChangesAsync();
     return Results.Ok(user);
+});
+
+app.MapPut("/update", async (AppDbContext db, User user) => {
+    db.Users.Update(user);
+    await db.SaveChangesAsync();
+    return Results.Ok();
+
 });
 
 app.MapDelete("/delete/{userid}", async (AppDbContext db, Guid userid) => {
