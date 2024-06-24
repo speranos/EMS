@@ -46,7 +46,7 @@
           Department is required.
         </div>
       </label>
-      <button type="submit" [disabled]="!form.valid" [routerLink]="['']" >Submit</button>
+      <button type="submit" [disabled]="!form.valid" (click)="onSubmit(form)" [routerLink]="['']" >Submit</button>
       <button type="button" [routerLink]="['']">Cancel</button>
     </form>
   </div>

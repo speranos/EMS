@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { user } from '../../interface';
 import { CrudService } from '../../services/crud.service';
 import { AppRoutingModule } from '../app-routing.module';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'user-grid',

@@ -21,7 +21,10 @@
           <td>{{user.position}}</td>
           <td>{{user.department}}</td>
           <input type="hidden" value="{{ user.id }}" class="user-id" />
-          <td><button>Edit</button><button>delete</button></td>
+          <td>
+            <button class="button" >Edit</button>
+            <button class="button" [routerLink]="['/Delete', user.id]">Delete</button>
+        </td>
         </tr>
       </tbody>
     </table>

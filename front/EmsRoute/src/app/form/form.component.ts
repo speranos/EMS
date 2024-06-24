@@ -24,11 +24,13 @@ export class FormComponent {
   formSubmitted = false;
 
   onSubmit(form: any) {
+    console.log(this.formData);
+    console.log("kifach lblan");
       this.back.Add(this.formData).subscribe();
-      this.closeForm.emit();
+      // this.closeForm.emit();
   }
 
-  close() {
-    this.closeForm.emit();
-  }
+  // close() {
+  //   this.closeForm.emit();
+  // }
 }

@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
@@ -7,24 +10,33 @@ builder.Services.AddCors(options =>
         .AllowAnyHeader()
         .AllowCredentials());
 });
+builder.Services.AddDbContext<AppDbContext>();
 var app = builder.Build();
 app.UseCors("AllowLocalhost");
 
-var db = new AppDbContext();
 
-// User Idb;
-
-app.MapGet("/all", async () => {
-    var users = db.Users.ToList();
+app.MapGet("/all", async (AppDbContext db) => {
+    var users = db.Users.ToListAsync();
         return Results.Ok(users);
 });
 
-app.MapPost("/create", async (User user) => {
+app.MapPost("/create", async (AppDbContext db, User user) => {
     db.Users.Add(user);
     await db.SaveChangesAsync();
-        return Results.Ok(user);
+    return Results.Ok(user);
 });
-// app.MapDelete("/user/{id}",);
+
+app.MapDelete("/delete/{userid}", async (AppDbContext db, Guid userid) => {
+    Console.WriteLine("userid back call === !!! ");
+    var user = await db.Users.FindAsync(userid);
+    if (user == null)
+        return Results.NotFound(new { message = "User not found" });
+    else{
+        db.Users.Remove(user);
+        await db.SaveChangesAsync();
+    }
+    return Results.Ok();
+});
 
 // app.MapPut("/user/{id}",);
 
