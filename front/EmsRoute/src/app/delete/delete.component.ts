@@ -17,24 +17,10 @@ Users: user[] = [];
 ngOnInit() {
   this.route.params.subscribe(params => {
     this.userId = params['id'];
-    console.log('User ID:', this.userId);
   });
 }
 
-// confirmDelete(){
-//   console.log("confirmed!!")
-//   this.back.Delete(this.userId).subscribe();
-//   this.back.GetAll().subscribe((data: user[]) => {
-//     this.Users = data;
-//     console.log(this.Users);
-//   });
-
-//   this.router.navigate([''], { state: { users: this.Users } });
-//   // this.router.navigate(['']);
-// }
-
 confirmDelete() {
-  console.log("confirmed!!");
   this.back.Delete(this.userId).subscribe({
     next: () => {
         this.router.navigate(['']);

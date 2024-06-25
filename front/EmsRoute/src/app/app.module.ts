@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { DeleteComponent } from './delete/delete.component';
 import { EditComponent } from './edit/edit.component';
 
-// import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [

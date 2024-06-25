@@ -1,25 +1,4 @@
-
-  
-  /* .frame {
-    width: 95vw;
-    height: 95vh;
-
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.72) 0%,
-        rgba(255, 255, 255, 0.45) 100%
-      );
-      -webkit-backdrop-filter: saturate(3);
-    backdrop-filter: saturate(3);
-
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-  } */
-
-  .content {
+.content {
     position: relative;
     z-index: 1;
     text-align: center;

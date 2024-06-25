@@ -23,11 +23,8 @@ export class FormComponent {
     position: '',
     department: ''
   };
-  // formSubmitted = false;
 
   onSubmit() {
-    // console.log(this.formData);
-    // console.log("kifach lblan");
     this.back.Add(this.formData).subscribe({
       next:() => {
         this.router.navigate(['']);
@@ -36,7 +33,5 @@ export class FormComponent {
         console.error("Creation Error", err);
       }
     });
-  // this.back.Add(this.formData).subscribe();
-  // this.router.navigate(['']);
   }
 }

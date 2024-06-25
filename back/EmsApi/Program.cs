@@ -21,15 +21,12 @@ app.MapGet("/page/{pagenum}", async (AppDbContext db, int pagenum) => {
     .Skip((pagenum - 1) * 9)
     .Take(9)
     .ToListAsync();
-    Console.WriteLine("backend envolved !!!!!");
-        return Results.Ok(users.Result);
+    return Results.Ok(users.Result);
 });
 
 app.MapGet("/user/{userid}", async (AppDbContext db, Guid userid) => {
     var user = db.Users.FindAsync(userid);
-    Console.WriteLine(user.Result);
-    Console.WriteLine("Single user envolved !!!!!");
-        return Results.Ok(user.Result);
+    return Results.Ok(user.Result);
 });
 
 app.MapGet("/count", async (AppDbContext db) => {
@@ -61,11 +58,6 @@ app.MapDelete("/delete/{userid}", async (AppDbContext db, Guid userid) => {
 
     return Results.Ok();
 });
-
-// app.MapPut("/user/{id}",);
-
-// app.MapGet("/user/{id}",);
-
 
 
 app.Run();

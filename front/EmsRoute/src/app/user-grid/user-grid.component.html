@@ -23,7 +23,7 @@
           <input type="hidden" value="{{ user.id }}" class="user-id" />
           <td>
             <button class="button" [routerLink]="['/Edit', user.id]" >Edit</button>
-            <button class="button" [routerLink]="['/Delete', user.id]">Delete</button>
+            <button class="button" type="delete" [routerLink]="['/Delete', user.id]">Delete</button>
         </td>
         </tr>
       </tbody>

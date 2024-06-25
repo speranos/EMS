@@ -33,15 +33,12 @@ Mfetch(){
 NextPage(){
   this.pagenum++;
   this.Mfetch();
-  console.log(this.Users);
-  console.log(this.pagenum);
 }
 
 PerviousPage(){
   this.pagenum--;
   this.Mfetch();
 }
-  
 
 
 }

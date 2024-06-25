@@ -26,13 +26,10 @@ User:user = {
 ngOnInit() {
   this.route.params.subscribe(params => {
     this.userId = params['id'];
-
-    console.log('User ID:', this.userId);
-
   });
+  
   this.back.GetUser(this.userId).subscribe((data: user) => {
     this.User = data;
-    console.log(this.User);
   });
 }
 
