@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/enima/Desktop/EMS/back/EmsApi/EmsApi.csproj": {}
+    "/Users/enima/Desktop/deploy/back/EmsApi/EmsApi.csproj": {}
   },
   "projects": {
-    "/Users/enima/Desktop/EMS/back/EmsApi/EmsApi.csproj": {
+    "/Users/enima/Desktop/deploy/back/EmsApi/EmsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/enima/Desktop/EMS/back/EmsApi/EmsApi.csproj",
+        "projectUniqueName": "/Users/enima/Desktop/deploy/back/EmsApi/EmsApi.csproj",
         "projectName": "EmsApi",
-        "projectPath": "/Users/enima/Desktop/EMS/back/EmsApi/EmsApi.csproj",
+        "projectPath": "/Users/enima/Desktop/deploy/back/EmsApi/EmsApi.csproj",
         "packagesPath": "/Users/enima/.nuget/packages/",
-        "outputPath": "/Users/enima/Desktop/EMS/back/EmsApi/obj/",
+        "outputPath": "/Users/enima/Desktop/deploy/back/EmsApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/enima/.nuget/NuGet/NuGet.Config"

@@ -22,17 +22,18 @@ app.UseCors("AllowLocalhost");
 
 
 app.MapGet("/page/{pagenum}", async (AppDbContext db, int pagenum) => {
-    int totalCount = await db.Users.CountAsync();
-    var users = db.Users
+    var users = await db.Users
     .Skip((pagenum - 1) * 9)
     .Take(9)
     .ToListAsync();
-    return Results.Ok(users.Result);
+    return Results.Ok(users);
 });
 
 app.MapGet("/user/{userid}", async (AppDbContext db, Guid userid) => {
-    var user = db.Users.FindAsync(userid);
-    return Results.Ok(user.Result);
+    var user = await db.Users.FindAsync(userid);
+    if(user == null)
+        return Results.NotFound();
+    return Results.Ok(user);
 });
 
 app.MapGet("/count", async (AppDbContext db) => {
@@ -54,14 +55,11 @@ app.MapPut("/update", async (AppDbContext db, User user) => {
 });
 
 app.MapDelete("/delete/{userid}", async (AppDbContext db, Guid userid) => {
-    Console.WriteLine("userid back call === !!! ");
     var user = await db.Users.FindAsync(userid);
     if (user == null)
-        return Results.NotFound(new { message = "User not found" });
-
+        return Results.NotFound();
     db.Users.Remove(user);
     await db.SaveChangesAsync();
-
     return Results.Ok();
 });
 

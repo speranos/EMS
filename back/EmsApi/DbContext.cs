@@ -10,10 +10,13 @@ public class AppDbContext : DbContext
         optionsBuilder.UseSqlite("Data Source=MyData.db");
     }
 
-    // protected override void OnModelCreating(ModelBuilder modelBuilder)
-    // {
-    //     modelBuilder.Entity<User>()
-    //         .Property(u => u.Id)
-    //         .HasDefaultValueSql("NEWID()");
-    // }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>()
+            .Property(u => u.Id)
+            .HasConversion(
+                v => v.ToString(),
+                v => Guid.Parse(v)
+            );
+    }
 }
