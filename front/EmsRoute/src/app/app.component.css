@@ -1,15 +1,9 @@
-/* Ensure body and html take full height */
-body, html {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    font-family: Arial, sans-serif;
-  }
+
   
-  .frame {
+  /* .frame {
     width: 95vw;
     height: 95vh;
-    /* background-color: rgba(255, 255, 255, 0.565); */
+
     background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.72) 0%,
@@ -23,7 +17,13 @@ body, html {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-  }
+  } */
+
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
 
 
 

@@ -1,5 +1,5 @@
 .top-right-button {
-    position: absolute;
+    position: flex;
     top: 40px;
     right: 50px;
     padding: 10px 20px;
