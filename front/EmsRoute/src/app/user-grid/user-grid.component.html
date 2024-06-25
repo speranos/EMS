@@ -32,5 +32,5 @@
   <div>
     <button class="button" (click)="PerviousPage()" [disabled]="pagenum == 1" (click)="PerviousPage" > Previous </button>
     <span class="pagination"> Page {{pagenum}} of {{totalePage}} </span>
-    <button class="button" (click)="NextPage()" [disabled]="pagenum == totalePage" > Next </button>
+    <button class="button" (click)="NextPage()" [disabled]="pagenum >= totalePage" > Next </button>
   </div>

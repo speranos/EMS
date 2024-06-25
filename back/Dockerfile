@@ -1,16 +1,16 @@
-# install --cask dotnet-sdk
-# dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-# dotnet add package Microsoft.EntityFrameworkCore.Design
+FROM debian:bullseye
 
-FROM node:20-alpine
+WORKDIR /app
 
-RUN npm install
+COPY ./EmsApi /app/EmsApi
 
-COPY ./EmsApi/ ./
+RUN chmod +x ./EmsApi/script.sh
 
 EXPOSE 5146
 
+WORKDIR /app/EmsApi
+
 ENTRYPOINT ["sh", "./script.sh"]
 
-CMD [ "dotnet run" ]
+
 

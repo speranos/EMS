@@ -1,9 +1,13 @@
 FROM node:20-alpine
 
-RUN npm install
+WORKDIR /app
 
-COPY ./EmsRoute ./
+COPY ./EmsRoute /app/EmsRoute
+
+WORKDIR /app/EmsRoute
+
+RUN npm install
 
 EXPOSE 4200
 
-CMD [ "ng serve" ]
+CMD ["npm", "start"]
